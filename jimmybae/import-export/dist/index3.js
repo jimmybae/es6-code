@@ -2,9 +2,7 @@
 
 var _utils = require('./utils3');
 
-var _utils2 = _interopRequireDefault(_utils);
+// export
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-console.log((0, _utils2.default)(1, 2)); // 3
+console.log((0, _utils.sum)(1, 4)); // 5
 // index3.js

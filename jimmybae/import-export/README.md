@@ -46,6 +46,8 @@ export { name, sum, Circle };
 ```
 
 ### import
+* 중괄호(brace)를 사용하여 모듈을 import
+* export, import의 모듈명이 같아야 한다.
 ```js
 // index1.js
 import { name, sum, Circle } from './utils1';
@@ -66,10 +68,14 @@ console.log(new CI(10)); // Circle { radius: 10 }
 ```
 
 ### export default
-* 모듈에서 하나만 export하는 경우
+* 하나의 export default만 사용가능, 함수명을 생략 가능
+* export와 다른점은 import때 brace를 쓰지 않고 모듈명을 임의로 지정할 수 있음
 * var, let, const 변수는 사용 X
 ```js
 // utils3.js
+export function sum(x, y) {
+  return x + y;
+}
 export default function(x, y) {
   return x + y;
 }
@@ -77,9 +83,11 @@ export default function(x, y) {
 * 임의의 이름으로 import
 ```js
 // index3.js
-import isum from './utils3'
+import isum from './utils3' // export default
+import { sum } from './utils3' // export
 
 console.log(isum(1, 2)); // 3
+console.log(sum(1, 4)); // 5
 ```
 
 ### babel
@@ -117,6 +125,6 @@ $ npm run build
 ```
 
 ### Reference
-[ES6 In Depth: 모듈 ★ Mozilla 웹 기술 블로그](http://hacks.mozilla.or.kr/2016/05/es6-in-depth-modules/)
-[ECMAScript6 - Module | PoiemaWeb](http://poiemaweb.com/es6-module)
+[ES6 In Depth: 모듈 ★ Mozilla 웹 기술 블로그](http://hacks.mozilla.or.kr/2016/05/es6-in-depth-modules/)  
+[ECMAScript6 - Module | PoiemaWeb](http://poiemaweb.com/es6-module)  
 [ECMAScript6 - Babel + Webpack | PoiemaWeb](http://poiemaweb.com/es6-babel)
